@@ -51,7 +51,6 @@ func _on_body_entered(body):
 
 
 
-
 func _on_range_body_entered(body):
 	if body.is_in_group("Player"):
 		is_in_range = true
