@@ -1,4 +1,4 @@
-[gd_scene load_steps=170 format=4 uid="uid://dtpfhxf6wusy"]
+[gd_scene load_steps=160 format=4 uid="uid://dtpfhxf6wusy"]
 
 [ext_resource type="Texture2D" uid="uid://bi2xr2inw8sfn" path="res://Industrial_exterior_v2/Textures/Asphalt_1-4.png" id="1_pqwt6"]
 [ext_resource type="Texture2D" uid="uid://sronvuwa6jyg" path="res://Industrial_exterior_v2/Textures/Building_1.png" id="2_mppfi"]
@@ -23,8 +23,6 @@
 [ext_resource type="Texture2D" uid="uid://b6i2tub585ul6" path="res://Industrial_exterior_v2/Textures/Pipes.png" id="22_4s6hw"]
 [ext_resource type="Texture2D" uid="uid://b082hxn1pna0u" path="res://Industrial_exterior_v2/Textures/Barrel_1.png" id="23_i5q6v"]
 [ext_resource type="Texture2D" uid="uid://6rjwf5cihtco" path="res://Industrial_exterior_v2/Textures/Barrel_3.png" id="24_eoiq8"]
-[ext_resource type="ArrayMesh" uid="uid://iea8xs5daqu8" path="res://Barrels/Cylinder.res" id="24_rlemx"]
-[ext_resource type="Texture2D" uid="uid://ck8frft3uje7n" path="res://Barrels/barrel.png" id="25_n2raj"]
 [ext_resource type="PackedScene" uid="uid://ckkwdoj7vpe0d" path="res://enemy/enemy.tscn" id="26_cgxrc"]
 [ext_resource type="PackedScene" uid="uid://dfdjg6qbeunvr" path="res://player/player.tscn" id="26_n2raj"]
 [ext_resource type="Script" uid="uid://btmf5oufs48hd" path="res://GameManager.gd" id="28_15th8"]
@@ -1407,30 +1405,6 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_jvupl")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cgxrc"]
-albedo_texture = ExtResource("25_n2raj")
-
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_614p3"]
-radius = 0.624023
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_15th8"]
-albedo_texture = ExtResource("25_n2raj")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_djq4r"]
-albedo_texture = ExtResource("25_n2raj")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xtxyr"]
-albedo_texture = ExtResource("25_n2raj")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8o5w7"]
-albedo_texture = ExtResource("25_n2raj")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b8qbn"]
-albedo_texture = ExtResource("25_n2raj")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rknp2"]
-albedo_texture = ExtResource("25_n2raj")
 
 [sub_resource type="Environment" id="Environment_614p3"]
 background_mode = 1
@@ -4453,167 +4427,6 @@ transform = Transform3D(-0.435183, 0, -0.0462772, 0, 0.437637, 0, 0.0462772, 0, 
 mesh = SubResource("ArrayMesh_ybhrs")
 skeleton = NodePath("")
 
-[node name="KEY BARREL 1" type="StaticBody3D" parent="NavigationRegion3D"]
-transform = Transform3D(61.8992, -8.10827, -4.26514e-07, 0, -2.72881e-06, 75.126, -8.10827, -61.8992, -3.25605e-06, 68.7115, 0.707569, -48.3809)
-
-[node name="barrel" type="MeshInstance3D" parent="NavigationRegion3D/KEY BARREL 1"]
-transform = Transform3D(1, 0, 0, 0, 1, -3.55271e-15, 0, -3.55271e-15, 1, 0, 0, 0)
-mesh = ExtResource("24_rlemx")
-skeleton = NodePath("")
-surface_material_override/0 = SubResource("StandardMaterial3D_cgxrc")
-
-[node name="emission water" type="MeshInstance3D" parent="NavigationRegion3D/KEY BARREL 1/barrel"]
-transform = Transform3D(0.932687, 0.122174, -1.77636e-15, -0.122174, 0.932687, -7.10543e-15, -5.06963e-16, -1.42109e-14, 0.78166, 0, 0, -0.00246493)
-skeleton = NodePath("")
-
-[node name="OmniLight3D" type="OmniLight3D" parent="NavigationRegion3D/KEY BARREL 1/barrel"]
-transform = Transform3D(0.0206535, -2.32831e-10, -1.20198e-11, 2.32831e-10, 0.0206535, 2.08544e-11, 2.77556e-17, 4.44089e-16, 0.0171625, 0, 0, 0.0169907)
-light_color = Color(0.314504, 1, 0.891755, 1)
-light_energy = 4.726
-omni_range = 11.5481
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/KEY BARREL 1"]
-transform = Transform3D(0.0158828, 7.05337e-18, -0.00208051, -0.00208051, -7.00189e-10, -0.0158828, -7.55706e-11, 0.013311, -5.76912e-10, 0.000222504, -0.0003016, -0.00328658)
-shape = SubResource("CylinderShape3D_614p3")
-
-[node name="KEY BARREL 2" type="StaticBody3D" parent="NavigationRegion3D"]
-transform = Transform3D(61.8992, -8.10827, -4.26514e-07, 0, -2.72881e-06, 75.126, -8.10827, -61.8992, -3.25605e-06, 70.7446, 0.707574, 45.5613)
-
-[node name="barrel" type="MeshInstance3D" parent="NavigationRegion3D/KEY BARREL 2"]
-transform = Transform3D(1, 0, 0, 0, 1, -3.55271e-15, 0, -3.55271e-15, 1, 0, 0, 0)
-mesh = ExtResource("24_rlemx")
-skeleton = NodePath("")
-surface_material_override/0 = SubResource("StandardMaterial3D_15th8")
-
-[node name="emission water" type="MeshInstance3D" parent="NavigationRegion3D/KEY BARREL 2/barrel"]
-transform = Transform3D(0.932687, 0.122174, -1.77636e-15, -0.122174, 0.932687, -7.10543e-15, -5.06963e-16, -1.42109e-14, 0.78166, 0, 0, -0.00246493)
-skeleton = NodePath("")
-
-[node name="OmniLight3D" type="OmniLight3D" parent="NavigationRegion3D/KEY BARREL 2/barrel"]
-transform = Transform3D(0.0160185, -2.32831e-10, -2.77556e-17, 2.32831e-10, 0.0160185, -3.33067e-16, 2.08167e-17, 3.88578e-16, 0.013311, 0, 0, 0.0169907)
-light_color = Color(0.314504, 1, 0.891755, 1)
-light_energy = 4.726
-omni_range = 6.46987
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/KEY BARREL 2"]
-transform = Transform3D(0.0158827, 3.50136e-05, -0.00208051, -0.0020805, -4.58718e-06, -0.0158828, -4.24955e-05, 0.013311, -5.82407e-10, 0.000222564, -0.0003016, -0.00328658)
-shape = SubResource("CylinderShape3D_614p3")
-
-[node name="KEY BARREL 3" type="StaticBody3D" parent="NavigationRegion3D"]
-transform = Transform3D(61.8992, -8.10827, -4.26514e-07, 0, -2.72881e-06, 75.126, -8.10827, -61.8992, -3.25605e-06, 12.0849, 0.762649, 19.141)
-
-[node name="barrel" type="MeshInstance3D" parent="NavigationRegion3D/KEY BARREL 3"]
-transform = Transform3D(1, 0, 0, 0, 1, -3.55271e-15, 0, -3.55271e-15, 1, 0, 0, 0)
-mesh = ExtResource("24_rlemx")
-skeleton = NodePath("")
-surface_material_override/0 = SubResource("StandardMaterial3D_djq4r")
-
-[node name="emission water" type="MeshInstance3D" parent="NavigationRegion3D/KEY BARREL 3/barrel"]
-transform = Transform3D(0.932687, 0.122174, -1.77636e-15, -0.122174, 0.932687, -7.10543e-15, -5.06963e-16, -1.42109e-14, 0.78166, 0, 0, -0.00246493)
-skeleton = NodePath("")
-
-[node name="OmniLight3D" type="OmniLight3D" parent="NavigationRegion3D/KEY BARREL 3/barrel"]
-transform = Transform3D(0.0160185, -2.32831e-10, -2.77556e-17, 2.32831e-10, 0.0160185, -3.33067e-16, 2.08167e-17, 3.88578e-16, 0.013311, 0, 0, 0.0169907)
-light_color = Color(0.314504, 1, 0.891755, 1)
-light_energy = 4.726
-omni_range = 10.0664
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/KEY BARREL 3"]
-transform = Transform3D(0.0158828, 7.05337e-18, -0.00208051, -0.00208051, -7.00189e-10, -0.0158828, -7.55706e-11, 0.013311, -5.76912e-10, 0.000222504, -0.0003016, -0.00328658)
-shape = SubResource("CylinderShape3D_614p3")
-
-[node name="KEY BARREL 4" type="StaticBody3D" parent="NavigationRegion3D"]
-transform = Transform3D(61.8992, -8.10827, -4.26514e-07, 0, -2.72881e-06, 75.126, -8.10827, -61.8992, -3.25605e-06, -23.5434, 0.762651, 55.1552)
-
-[node name="barrel" type="MeshInstance3D" parent="NavigationRegion3D/KEY BARREL 4"]
-transform = Transform3D(1, 0, 0, 0, 1, -1.06581e-14, 0, -1.06581e-14, 1, -0.241561, 0.0106429, 1.86265e-09)
-mesh = ExtResource("24_rlemx")
-skeleton = NodePath("")
-surface_material_override/0 = SubResource("StandardMaterial3D_xtxyr")
-
-[node name="emission water" type="MeshInstance3D" parent="NavigationRegion3D/KEY BARREL 4/barrel"]
-transform = Transform3D(0.932687, 0.122174, -1.77636e-15, -0.122174, 0.932687, -7.10543e-15, -5.06963e-16, -1.42109e-14, 0.78166, 0, 0, -0.00246493)
-skeleton = NodePath("")
-
-[node name="OmniLight3D" type="OmniLight3D" parent="NavigationRegion3D/KEY BARREL 4/barrel"]
-transform = Transform3D(0.0160185, -2.32831e-10, -2.77556e-17, 2.32831e-10, 0.0160185, -3.33067e-16, 2.08167e-17, 3.88578e-16, 0.013311, 0, 0, 0.0169907)
-light_color = Color(0.314504, 1, 0.891755, 1)
-light_energy = 4.726
-omni_range = 15.3257
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/KEY BARREL 4"]
-transform = Transform3D(0.0158828, 7.05337e-18, -0.00208051, -0.00208051, -7.00189e-10, -0.0158828, -7.55706e-11, 0.013311, -5.76912e-10, 0.000222504, -0.0003016, -0.00328658)
-shape = SubResource("CylinderShape3D_614p3")
-
-[node name="KEY BARREL 5" type="StaticBody3D" parent="NavigationRegion3D"]
-transform = Transform3D(62.3993, 1.89146, -4.26514e-07, 4.36239e-07, -2.69372e-06, 75.126, 1.89146, -62.3993, -3.25605e-06, -68.9654, 0.762648, 0.303884)
-
-[node name="barrel" type="MeshInstance3D" parent="NavigationRegion3D/KEY BARREL 5"]
-transform = Transform3D(1, 0, 0, 0, 1, -3.55271e-15, 0, -3.55271e-15, 1, 0, 0, 0)
-mesh = ExtResource("24_rlemx")
-skeleton = NodePath("")
-surface_material_override/0 = SubResource("StandardMaterial3D_8o5w7")
-
-[node name="emission water" type="MeshInstance3D" parent="NavigationRegion3D/KEY BARREL 5/barrel"]
-transform = Transform3D(0.932687, 0.122174, -1.77636e-15, -0.122174, 0.932687, -7.10543e-15, -5.06963e-16, -1.42109e-14, 0.78166, 0, 0, -0.00246493)
-skeleton = NodePath("")
-
-[node name="OmniLight3D" type="OmniLight3D" parent="NavigationRegion3D/KEY BARREL 5/barrel"]
-transform = Transform3D(0.0160185, -2.32831e-10, -2.77556e-17, 2.32831e-10, 0.0160185, -3.33067e-16, 2.08167e-17, 3.88578e-16, 0.013311, 0, 0, 0.0169907)
-light_color = Color(0.314504, 1, 0.891755, 1)
-light_energy = 4.726
-omni_range = 12.014
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/KEY BARREL 5"]
-transform = Transform3D(0.0158828, 7.05337e-18, -0.00208051, -0.00208051, -7.00189e-10, -0.0158828, -7.55706e-11, 0.013311, -5.76912e-10, 0.000222504, -0.0003016, -0.00328658)
-shape = SubResource("CylinderShape3D_614p3")
-
-[node name="KEY BARREL 6" type="StaticBody3D" parent="NavigationRegion3D"]
-transform = Transform3D(62.3993, 1.89146, -4.26514e-07, 4.36239e-07, -2.69372e-06, 75.126, 1.89146, -62.3993, -3.25605e-06, -56.7649, 0.762645, -63.4469)
-
-[node name="barrel" type="MeshInstance3D" parent="NavigationRegion3D/KEY BARREL 6"]
-transform = Transform3D(1, 0, 0, 0, 1, -3.55271e-15, 0, -3.55271e-15, 1, 0, 0, 0)
-mesh = ExtResource("24_rlemx")
-skeleton = NodePath("")
-surface_material_override/0 = SubResource("StandardMaterial3D_b8qbn")
-
-[node name="emission water" type="MeshInstance3D" parent="NavigationRegion3D/KEY BARREL 6/barrel"]
-transform = Transform3D(0.932687, 0.122174, -1.77636e-15, -0.122174, 0.932687, -7.10543e-15, -5.06963e-16, -1.42109e-14, 0.78166, 0, 0, -0.00246493)
-skeleton = NodePath("")
-
-[node name="OmniLight3D" type="OmniLight3D" parent="NavigationRegion3D/KEY BARREL 6/barrel"]
-transform = Transform3D(0.0160185, -2.32831e-10, -2.77556e-17, 2.32831e-10, 0.0160185, -3.33067e-16, 2.08167e-17, 3.88578e-16, 0.013311, 0, 0, 0.0169907)
-light_color = Color(0.314504, 1, 0.891755, 1)
-light_energy = 4.726
-omni_range = 7.05351
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/KEY BARREL 6"]
-transform = Transform3D(0.0158828, 7.05337e-18, -0.00208051, -0.00208051, -7.00189e-10, -0.0158828, -7.55706e-11, 0.013311, -5.76912e-10, 0.000222504, -0.0003016, -0.00328658)
-shape = SubResource("CylinderShape3D_614p3")
-
-[node name="KEY BARREL 7" type="StaticBody3D" parent="NavigationRegion3D"]
-transform = Transform3D(62.3993, 1.89146, -4.26514e-07, 4.36239e-07, -2.69372e-06, 75.126, 1.89146, -62.3993, -3.25605e-06, -12.3449, 0.762646, -64.9651)
-
-[node name="barrel" type="MeshInstance3D" parent="NavigationRegion3D/KEY BARREL 7"]
-transform = Transform3D(1, 0, 0, 0, 1, -3.55271e-15, 0, -3.55271e-15, 1, 0, 0, 0)
-skeleton = NodePath("")
-
-[node name="emission water" type="MeshInstance3D" parent="NavigationRegion3D/KEY BARREL 7/barrel"]
-transform = Transform3D(0.932687, 0.122174, -1.77636e-15, -0.122174, 0.932687, -7.10543e-15, -5.06963e-16, -1.42109e-14, 0.78166, 0, 0, -0.00246493)
-mesh = ExtResource("24_rlemx")
-skeleton = NodePath("")
-surface_material_override/0 = SubResource("StandardMaterial3D_rknp2")
-
-[node name="OmniLight3D" type="OmniLight3D" parent="NavigationRegion3D/KEY BARREL 7/barrel"]
-transform = Transform3D(0.0160185, -2.32831e-10, -2.77556e-17, 2.32831e-10, 0.0160185, -3.33067e-16, 2.08167e-17, 3.88578e-16, 0.013311, 0, 0, 0.0169907)
-light_color = Color(0.314504, 1, 0.891755, 1)
-light_energy = 4.726
-omni_range = 5.48648
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/KEY BARREL 7"]
-transform = Transform3D(0.0158828, 7.05337e-18, -0.00208051, -0.00208051, -7.00189e-10, -0.0158828, -7.55706e-11, 0.013311, -5.76912e-10, 0.000222504, -0.0003016, -0.00328658)
-shape = SubResource("CylinderShape3D_614p3")
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_614p3")
 
@@ -4662,16 +4475,28 @@ theme_override_font_sizes/font_size = 40
 text = "x 0"
 
 [node name="Coin" parent="." instance=ExtResource("30_djq4r")]
-transform = Transform3D(30.71, 0, 0, 0, 30.71, 0, 0, 0, 30.71, -1.96328, 0.612491, -65.0304)
+transform = Transform3D(30.71, 0, 0, 0, 30.71, 0, 0, 0, 30.71, 12.0171, 0.699672, 19.4262)
 
 [node name="Coin2" parent="." instance=ExtResource("30_djq4r")]
-transform = Transform3D(30.71, 0, 0, 0, 30.71, 0, 0, 0, 30.71, 0.512967, 0.612491, -65.0304)
+transform = Transform3D(30.71, 0, 0, 0, 30.71, 0, 0, 0, 30.71, -12.1321, 0.591633, -64.8133)
 
 [node name="Coin3" parent="." instance=ExtResource("30_djq4r")]
-transform = Transform3D(30.71, 0, 0, 0, 30.71, 0, 0, 0, 30.71, 0.512967, 0.612491, -63.2478)
+transform = Transform3D(30.71, 0, 0, 0, 30.71, 0, 0, 0, 30.71, 69.3148, 0.699672, 45.2501)
 
 [node name="Coin4" parent="." instance=ExtResource("30_djq4r")]
-transform = Transform3D(30.71, 0, 0, 0, 30.71, 0, 0, 0, 30.71, 2.87524, 0.612491, -63.2478)
+transform = Transform3D(30.71, 0, 0, 0, 30.71, 0, 0, 0, 30.71, -39.3567, 0.699672, 55.8101)
+
+[node name="Coin5" parent="." instance=ExtResource("30_djq4r")]
+transform = Transform3D(30.71, 0, 0, 0, 30.71, 0, 0, 0, 30.71, -68.4227, 0.699672, 0.125211)
+
+[node name="Coin6" parent="." instance=ExtResource("30_djq4r")]
+transform = Transform3D(30.71, 0, 0, 0, 30.71, 0, 0, 0, 30.71, -68.4227, 0.699672, 0.125211)
+
+[node name="Coin7" parent="." instance=ExtResource("30_djq4r")]
+transform = Transform3D(30.71, 0, 0, 0, 30.71, 0, 0, 0, 30.71, -57.0215, 0.699672, -63.3751)
+
+[node name="Coin8" parent="." instance=ExtResource("30_djq4r")]
+transform = Transform3D(30.71, 0, 0, 0, 30.71, 0, 0, 0, 30.71, 66.1398, 0.699672, -34.301)
 
 [node name="GameManager" type="Node3D" parent="."]
 script = ExtResource("28_15th8")
