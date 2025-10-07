@@ -22,27 +22,28 @@ script = ExtResource("1_1f66h")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
-offset_right = 1151.0
-offset_bottom = 652.0
+offset_right = 1936.0
+offset_bottom = 1091.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_nyypv")
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 474.0
-offset_top = 446.0
-offset_right = 699.0
-offset_bottom = 490.0
+offset_left = 753.0
+offset_top = 744.0
+offset_right = 1188.0
+offset_bottom = 831.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("FontVariation_ryse7")
+theme_override_font_sizes/font_size = 60
 theme_override_styles/normal = SubResource("StyleBoxFlat_1f66h")
 text = "Exit"
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 482.0
-offset_top = 105.0
-offset_right = 687.0
-offset_bottom = 174.0
+offset_left = 870.0
+offset_top = 187.0
+offset_right = 1075.0
+offset_bottom = 256.0
 theme_override_font_sizes/font_size = 50
 text = "You win!"
 
