@@ -95,7 +95,7 @@ offset_right = 607.0
 offset_bottom = 671.0
 theme_override_font_sizes/font_size = 30
 text = "Goals :
-Collect 7 or more of Holy water to repel The blockman"
+Collect 7 or more of Holy water to repel the Blockman"
 
 [connection signal="pressed" from="Control/VBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Control/VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
