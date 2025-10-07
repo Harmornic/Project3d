@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Horror Game Enemy Basic Demo"
-run/main_scene="res://level/level.tscn"
+run/main_scene="uid://cf2s0da8ubf08"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 

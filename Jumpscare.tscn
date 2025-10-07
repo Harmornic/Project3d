@@ -1,0 +1,67 @@
+[gd_scene load_steps=8 format=3 uid="uid://c0bcr7ovj8equ"]
+
+[ext_resource type="PackedScene" uid="uid://6er8hmhuf52" path="res://enemy/model/superdupercreepyhumanoidwow.glb" id="1_0ps86"]
+[ext_resource type="Script" path="res://jumpscare.gd" id="1_fa0c3"]
+[ext_resource type="AudioStream" uid="uid://bkr7u74fqcsae" path="res://sounds/Powerful Scream - Sound Effect.mp3" id="3_wdywn"]
+
+[sub_resource type="Animation" id="Animation_fa0c3"]
+resource_name = "Jumpscare"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Ghost:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, -9.94751), Vector3(0, 0, -3.9683)]
+}
+
+[sub_resource type="Animation" id="Animation_wdywn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Ghost:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, -9.94751)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2ooul"]
+_data = {
+&"Jumpscare": SubResource("Animation_fa0c3"),
+&"RESET": SubResource("Animation_wdywn")
+}
+
+[sub_resource type="Environment" id="Environment_ahlys"]
+background_mode = 1
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_fa0c3")
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Camera3D")
+libraries = {
+&"": SubResource("AnimationLibrary_2ooul")
+}
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.43697)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ahlys")
+
+[node name="Ghost" parent="." instance=ExtResource("1_0ps86")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -9.94751)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_wdywn")

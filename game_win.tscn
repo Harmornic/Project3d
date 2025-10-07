@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://duwnefqljypnr"]
+
+[ext_resource type="Script" uid="uid://bnfu4yjalys8d" path="res://game_win.gd" id="1_1f66h"]
+[ext_resource type="Texture2D" uid="uid://tt38mqhaq70m" path="res://eaecabf4-7d7f-4ec3-9106-f831a002900b.png" id="2_fctd2"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nyypv"]
+texture = ExtResource("2_fctd2")
+
+[sub_resource type="FontVariation" id="FontVariation_ryse7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1f66h"]
+bg_color = Color(1, 1, 1, 1)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1f66h")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1151.0
+offset_bottom = 652.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_nyypv")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 474.0
+offset_top = 446.0
+offset_right = 699.0
+offset_bottom = 490.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_ryse7")
+theme_override_styles/normal = SubResource("StyleBoxFlat_1f66h")
+text = "Exit"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 482.0
+offset_top = 105.0
+offset_right = 687.0
+offset_bottom = 174.0
+theme_override_font_sizes/font_size = 50
+text = "You win!"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

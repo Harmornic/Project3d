@@ -1,16 +1,15 @@
 extends Node3D
 
-# ---------- VARIABLES ---------- #
-
 var score = 0
-
-# ---------- FUNCTIONS ---------- #
-
-
-
-
-# Making Cursor visible using "mouse_visible" key which is assigned in Project Settings > Input Map
-
 
 func add_score():
 	score += 1
+	print("Score:", score)
+
+	# ถ้าเก็บครบ 7 เหรียญ
+	if score >= 7:
+		go_to_win_scene()
+
+func go_to_win_scene():
+	# เปลี่ยนไปยัง scene WIN
+	get_tree().change_scene_to_file("res://game_win.tscn")
