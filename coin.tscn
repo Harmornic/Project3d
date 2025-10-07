@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://bep6pe7i2unfo"]
+
+[ext_resource type="ArrayMesh" uid="uid://iea8xs5daqu8" path="res://Barrels/Cylinder.res" id="1_0t63x"]
+[ext_resource type="Script" uid="uid://31ra88mrbi4s" path="res://Coin.gd" id="1_v7riw"]
+[ext_resource type="Texture2D" uid="uid://ck8frft3uje7n" path="res://Barrels/barrel.png" id="2_v7riw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0t63x"]
+albedo_texture = ExtResource("2_v7riw")
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_w14il"]
+height = 1.66992
+radius = 0.624023
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_0t63x"]
+
+[node name="Coin" type="Area3D"]
+script = ExtResource("1_v7riw")
+
+[node name="barrel" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.0453107, 0.998973, 0, -0.998973, -0.0453107, 0, 0, 0)
+mesh = ExtResource("1_0t63x")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_0t63x")
+
+[node name="emission water" type="MeshInstance3D" parent="barrel"]
+transform = Transform3D(0.932687, 0.122174, -1.77636e-15, -0.122174, 0.932687, -7.10543e-15, -5.06963e-16, -1.42109e-14, 0.78166, 0, 0, -0.00246493)
+skeleton = NodePath("")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="barrel"]
+transform = Transform3D(0.0160185, -2.32831e-10, -2.77556e-17, 2.32831e-10, 0.0160185, -3.33067e-16, 2.08167e-17, 3.88578e-16, 0.013311, 0, 0, 0.0169907)
+light_color = Color(0.314504, 1, 0.891755, 1)
+light_energy = 4.726
+omni_range = 12.014
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.0158828, 7.05337e-18, -0.00208051, -0.00208051, -7.00189e-10, -0.0158828, -7.55706e-11, 0.013311, -5.76912e-10, 0.000222504, -0.0003016, -0.00108975)
+shape = SubResource("CylinderShape3D_w14il")
+
+[node name="Range" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Range"]
+transform = Transform3D(0.090531, 0, 0, 0, 0.090531, 0, 0, 0, 0.090531, 0, 0.026968, 0)
+shape = SubResource("SphereShape3D_0t63x")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

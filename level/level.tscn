@@ -1,0 +1,42 @@
+[gd_scene load_steps=8 format=3 uid="uid://xh24bj7vyc42"]
+
+[ext_resource type="PackedScene" uid="uid://c6rslwmxfavxo" path="res://level/model/level.glb" id="1_0nlc8"]
+[ext_resource type="Script" uid="uid://bgq82cadd5sna" path="res://level/level.gd" id="1_k0b2y"]
+[ext_resource type="PackedScene" uid="uid://ckkwdoj7vpe0d" path="res://enemy/enemy.tscn" id="2_xg7sp"]
+[ext_resource type="PackedScene" uid="uid://dfdjg6qbeunvr" path="res://player/player.tscn" id="3_pgwpv"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3sk8d"]
+sky_top_color = Color(0.0331065, 0.0488296, 0.0711122, 1)
+sky_horizon_color = Color(0.123827, 0.169478, 0.197249, 1)
+ground_bottom_color = Color(0.162207, 0.135703, 0.104918, 1)
+ground_horizon_color = Color(0.161276, 0.166142, 0.173823, 1)
+
+[sub_resource type="Sky" id="Sky_wj2yu"]
+sky_material = SubResource("ProceduralSkyMaterial_3sk8d")
+
+[sub_resource type="Environment" id="Environment_hqlk8"]
+background_mode = 2
+sky = SubResource("Sky_wj2yu")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="Level" type="Node3D"]
+script = ExtResource("1_k0b2y")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_hqlk8")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+light_energy = 0.1
+shadow_enabled = true
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+
+[node name="LevelModel" parent="NavigationRegion3D" instance=ExtResource("1_0nlc8")]
+
+[node name="Enemy" parent="." instance=ExtResource("2_xg7sp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7514, 0, 16.5632)
+
+[node name="Player" parent="." instance=ExtResource("3_pgwpv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.85972, 1, 8.93871)
