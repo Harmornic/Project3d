@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cf2s0da8ubf08"]
+[gd_scene load_steps=6 format=3 uid="uid://cf2s0da8ubf08"]
 
 [ext_resource type="Script" uid="uid://80g0h1srou2y" path="res://menu.gd" id="1_5yleq"]
 [ext_resource type="Texture2D" uid="uid://daiiu1uosmx0x" path="res://cc71e03e-78e9-4c25-83a0-cf04ec8d66e0.png" id="1_uubjt"]
+[ext_resource type="AudioStream" uid="uid://cmamfcnfsfs1a" path="res://sounds/Skibidi Toilet (Slowed  Reverb).mp3" id="3_ylpcl"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5yleq"]
 texture = ExtResource("1_uubjt")
@@ -96,6 +97,10 @@ offset_bottom = 671.0
 theme_override_font_sizes/font_size = 30
 text = "Goals :
 Collect 7 or more of Holy water to repel the Blockman"
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_ylpcl")
+autoplay = true
 
 [connection signal="pressed" from="Control/VBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Control/VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
